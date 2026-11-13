@@ -32,7 +32,7 @@ npm ci
 ```
 *downloads the required packages in `package.json`folder*
 
-#### 4. Open `.env` file and change:
+#### 4. Open `.env` file and set:
     
 | Parameter    | Type     | Description                         |
 | :------------| :--------| :-----------------------------------|
