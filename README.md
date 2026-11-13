@@ -16,10 +16,10 @@ It may support more advanced features such as ranked points over time by using [
 
 (or on linux):
 
-    ```bash
-    sudo apt update
-    sudo apt install nodejs
-    ```
+```bash
+sudo apt update
+sudo apt install nodejs
+```
 
 #### 2. Download/clone the repo
 
