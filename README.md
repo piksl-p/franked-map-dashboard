@@ -34,10 +34,10 @@ npm ci
 
 #### 4. Open `.env` file and change:
     
-    | Parameter    | Type     | Description                         |
-    | :------------| :--------| :-----------------------------------|
-    | `FORTS_PATH` | `string` | your absolute file path for forts   |
-    | `STEAM_ID`   | `string` | your steamID                        |
+| Parameter    | Type     | Description                         |
+| :------------| :--------| :-----------------------------------|
+| `FORTS_PATH` | `string` | your absolute file path for forts   |
+| `STEAM_ID`   | `string` | your steamID                        |
 
 #### 5. Start the server
 
