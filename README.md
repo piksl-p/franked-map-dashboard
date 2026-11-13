@@ -14,7 +14,7 @@ It may support more advanced features such as ranked points over time by using [
 
 #### 1. **Install nodejs** [(download here)](https://nodejs.org/en/download)
 
-    (or on linux):
+(or on linux):
 
     ```bash
     sudo apt update
