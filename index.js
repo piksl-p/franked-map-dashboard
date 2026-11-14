@@ -21,7 +21,9 @@ const filePath = path.join(baseFortsPath, "users");
 const constantsLuaPath = path.join(baseFortsPath, "data", "db", "constants.lua");
 
 let newestSeason;
+let previousCycleSeason;
 let mapData;
+let mappool;
 const consoleDisplayLength = 3;
 
 const showDiscoveredFiles = false; // debug
@@ -154,19 +156,21 @@ async function updateMapData() {
         return res.json({ success: true, data: [], newestSeason: null, SteamID: SteamID,});
     }
 
-    newestSeason = determineRankedSeason(rankedFiles, rankedFilesLength);
+    determineRankedSeason(rankedFiles, rankedFilesLength);
+
     let filteredRankedFiles = filterRankedFiles(rankedFiles, rankedFilesLength, newestSeason);
-    let filteredRankedFileLength = filteredRankedFiles.length;
+    let filtRankedFileLength = filteredRankedFiles.length;  
 
-    let mappool = [];
-    try {
-        mappool = getActiveMapsFromFile(constantsLuaPath, newestSeason); 
-    } catch (error) {
-        console.error("Error reading mappool", error);
+    if (newestSeason>previousCycleSeason || previousCycleSeason==null) { // trying to avoid frequent map extraction if season is the same
+        try {
+            mappool = getActiveMapsFromFile(constantsLuaPath, newestSeason); 
+        } catch (error) {
+            console.error("Error reading mappool", error);
+        }
     }
-
+    
     let mapFrequencies = createMapArray(mappool);
-    updateMapArray(filteredRankedFiles, filteredRankedFileLength, mapFrequencies);
+    updateMapArray(filteredRankedFiles, filtRankedFileLength, mapFrequencies);
     let sortedByPopularity = sortMapsByPop(mapFrequencies);
 
     mapData = { 
@@ -174,12 +178,14 @@ async function updateMapData() {
         data: sortedByPopularity,
         newestSeason: newestSeason,
         SteamID: SteamID,
-        gamesPlayed: filteredRankedFileLength,
+        gamesPlayed: filtRankedFileLength,
     };
 
     if (logActions == true) {
         console.log(mapData);
     }
+
+    previousCycleSeason = newestSeason;
 }
 
 updateMapData(); // run once for initial load
