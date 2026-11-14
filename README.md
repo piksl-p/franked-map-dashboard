@@ -1,7 +1,7 @@
 # Forts Rankedstats
 ## Quick overview:
 
-- Graphical view of the number of [Forts](https://store.steampowered.com/news/app/410900) ranked games you play on a season's maps
+- Graphical view of the number of [Forts](https://store.steampowered.com/news/app/410900) ranked games you play on a season's maps using chart.js
 - Runs a local `nodejs` server to grab and process data from filenames, which is displayed in the browser dashboard   
 - Uses React to update live in the browser as you play (*at 60s intervals**)
 
