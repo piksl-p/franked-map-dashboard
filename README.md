@@ -30,7 +30,7 @@ Run in project folder
 ```bash
 npm ci
 ```
-*downloads the required packages in `package.json` file*
+*downloads required packages in `package-lock.json` file*
 
 #### 4. Open `.env` file and set:
     
