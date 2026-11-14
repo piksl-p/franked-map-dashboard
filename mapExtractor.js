@@ -40,5 +40,7 @@ export function getActiveMapsFromFile(absoluteFilePath, seasonNumber) {
         }
     }
 
+    console.log(`Retrieved ${activeMaps.length} maps for season ${seasonNumber}`);
+
     return activeMaps;
 }
