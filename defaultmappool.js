@@ -12,5 +12,6 @@ export const defaultMaps = [  // not an object but whatever
     "Battlegrounds 1v1",
     "Split",
     "Crevice",
-    "Elephants"
+    "Elephants",
+    "Spirals"
 ]
