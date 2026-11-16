@@ -32,7 +32,7 @@ npm ci
 ```
 *downloads required packages in `package-lock.json` file*
 
-#### 4. Open `.env` file and set:
+#### 4. Create `.env` file and set:
     
 | Parameter    | Type     | Description                         |
 | :------------| :--------| :-----------------------------------|
